@@ -66,7 +66,7 @@ const DasarHukumPpidPage = () => {
     <div className="mt-6 px-4">
       <CustomPathName />
 
-      <DataTable columns={columns} data={dataHukum} />
+      <DataTable columns={columns} data={dataHukum} columnToFilter="jenis" />
     </div>
   );
 };

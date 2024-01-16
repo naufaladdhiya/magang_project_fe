@@ -31,6 +31,42 @@ const dataDIP: DataDIP[] = [
     jangkaWaktuPenyimpanan: "Selama berlaku",
     jenisMediaYangMemuat: "http://ppid.surakarta.go.id/dasar-hukum-ppid/",
   },
+  {
+    no: 2,
+    jenisInformasi: "Struktur Organisasi",
+    ringkasanInformasi:
+      "Berisi tentang struktur organisasi Pemerintah Kota Surakarta",
+    pejabatMenguasaiInformasi: "PPID Kota Surakarta",
+    penanggungJawabInformasi: "PPID",
+    waktuPembuatanInformasi: "2023",
+    bentukInformasiYangTersedia: "Softfile",
+    jangkaWaktuPenyimpanan: "Selama berlaku",
+    jenisMediaYangMemuat: "http://ppid.surakarta.go.id/dasar-hukum-ppid/",
+  },
+  {
+    no: 3,
+    jenisInformasi: "Tugas Pokok dan Fungsi",
+    ringkasanInformasi:
+      "Berisi tentang tugas pokok dan fungsi Pemerintah Kota Surakarta",
+    pejabatMenguasaiInformasi: "PPID Kota Surakarta",
+    penanggungJawabInformasi: "PPID",
+    waktuPembuatanInformasi: "2023",
+    bentukInformasiYangTersedia: "Softfile",
+    jangkaWaktuPenyimpanan: "Selama berlaku",
+    jenisMediaYangMemuat: "http://ppid.surakarta.go.id/dasar-hukum-ppid/",
+  },
+  {
+    no: 4,
+    jenisInformasi: "Mekanisme Permohonan Informasi",
+    ringkasanInformasi:
+      "Berisi tentang mekanisme permohonan informasi Pemerintah Kota Surakarta",
+    pejabatMenguasaiInformasi: "PPID Kota Surakarta",
+    penanggungJawabInformasi: "PPID",
+    waktuPembuatanInformasi: "2023",
+    bentukInformasiYangTersedia: "Softfile",
+    jangkaWaktuPenyimpanan: "Selama berlaku",
+    jenisMediaYangMemuat: "http://ppid.surakarta.go.id/dasar-hukum-ppid/",
+  },
 ];
 
 const columns: ColumnDef<DataDIP>[] = [
@@ -92,6 +128,26 @@ const DaftarInfromasiPublikPage = () => {
 
       <p className="text-gray-800 text-lg font-bold">
         A. INFORMASI WAJIB DIUMUMKAN SECARA BERKALA
+      </p>
+
+      <DataTable
+        columns={columns}
+        data={dataDIP}
+        columnToFilter="jenisInformasi"
+      />
+
+      <p className="text-gray-800 text-lg font-bold">
+        B. INFORMASI WAJIB DIUMUMKAN SECARA SERTA MERTA
+      </p>
+
+      <DataTable
+        columns={columns}
+        data={dataDIP}
+        columnToFilter="jenisInformasi"
+      />
+
+      <p className="text-gray-800 text-lg font-bold">
+        C. INFORMASI WAJIB DIUMUMKAN SECARA BERKALA DAN SERTA MERTA
       </p>
 
       <DataTable

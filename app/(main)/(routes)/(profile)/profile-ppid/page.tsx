@@ -6,17 +6,16 @@ import { useQuery } from "@tanstack/react-query";
 
 interface ProfileData {
   id: number;
-  name: string;
-  content: string;
+  title: string;
+  description: string;
 }
 
 const ProfilePPIDPage = () => {
   const { data: profileData, isLoading } = useQuery({
     queryKey: ["profile-ppid"],
     queryFn: async () => {
-      const res = await axiosInstance.get("/profile-ppid");
-      const results = res.data;
-      return results;
+      const res = await axiosInstance.get("/profile/ppid");
+      return res.data;
     },
   });
 
@@ -24,13 +23,13 @@ const ProfilePPIDPage = () => {
     <div className="mt-6 px-4">
       <CustomPathName />
 
-      {profileData?.map((data: ProfileData) => (
-        <div className="mt-5">
+      {profileData?.data?.map((data: ProfileData) => (
+        <div className="mt-5" key={data.id}>
           <p className="text-center text-2xl text-gray-600 font-bold mt-4">
-            {data.name}
+            {data.title}
           </p>
           <p key={data.id} className="mt-4">
-            {data.content}
+            {data.description}
           </p>
         </div>
       ))}

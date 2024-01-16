@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AUTH_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWZhZTk4OThlZGM0OTZmNjBhMGZkYSIsImlhdCI6MTcwNDk2Mzc3NSwiZXhwIjoxNzA1MDUwMTc1fQ.4OgXAs7y4h0qheXj-OWlkICH6OmfMQDGFp1O-TkQxdE";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWZhZTk4OThlZGM0OTZmNjBhMGZkYSIsImlhdCI6MTcwNTI0MDk3OSwiZXhwIjoxNzA1MzI3Mzc5fQ.j3us-DKfGZZziWaSwnihz9auiexLweSPJdOQ_w5w4AI";
 
 const axiosInstance = axios.create({
   baseURL: "https://magang-project-be.vercel.app/",

@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -10,9 +11,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <body className={inter.className}>
+    <main>
       <Navbar />
       {children}
-    </body>
+      <Footer />
+    </main>
   );
 }

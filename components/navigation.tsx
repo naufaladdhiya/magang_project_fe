@@ -102,40 +102,40 @@ const menuOptions = [
       },
     ],
   },
-  {
-    label: "Laporan",
-    url: "/contact",
-    submenu: [
-      {
-        label: "Laporan Keuangan",
-        url: "/contact",
-      },
-      {
-        label: "Laporan Kekayaan",
-        url: "/contact",
-      },
-      {
-        label: "Laporan Aduan Masyarakat",
-        url: "/contact",
-      },
-      {
-        label: "Laporan Kinerja",
-        url: "/contact",
-      },
-      {
-        label: "Laporan Akses",
-        url: "/contact",
-      },
-      {
-        label: "Laporan PPID",
-        url: "/contact",
-      },
-      {
-        label: "Rencana Kerja Pemerintah Pemerintah Daerah",
-        url: "/contact",
-      },
-    ],
-  },
+  // {
+  //   label: "Laporan",
+  //   url: "/contact",
+  //   submenu: [
+  //     {
+  //       label: "Laporan Keuangan",
+  //       url: "/contact",
+  //     },
+  //     {
+  //       label: "Laporan Kekayaan",
+  //       url: "/contact",
+  //     },
+  //     {
+  //       label: "Laporan Aduan Masyarakat",
+  //       url: "/contact",
+  //     },
+  //     {
+  //       label: "Laporan Kinerja",
+  //       url: "/contact",
+  //     },
+  //     {
+  //       label: "Laporan Akses",
+  //       url: "/contact",
+  //     },
+  //     {
+  //       label: "Laporan PPID",
+  //       url: "/contact",
+  //     },
+  //     {
+  //       label: "Rencana Kerja Pemerintah Pemerintah Daerah",
+  //       url: "/contact",
+  //     },
+  //   ],
+  // },
   {
     label: "Covid-19",
     url: "#",
@@ -181,7 +181,20 @@ const menuOptions = [
   {
     label: "Kontak",
     url: "#",
-    submenu: [],
+    submenu: [
+      {
+        label: "Kontak Kami",
+        url: "/kontak-kami",
+      },
+      {
+        label: "Layanan Aduan",
+        url: "/contact",
+      },
+      {
+        label: "Forumlir Aduan",
+        url: "/contact",
+      },
+    ],
   },
 ];
 
@@ -197,16 +210,13 @@ const Navigation = () => {
     <nav className="sticky top-10 bg-gray-300/60 h-full p-4 rounded-lg w-[375px]">
       <div className="flex items-center gap-5 mb-5">
         <Image
-          src="/next.svg"
+          src="/logo.png"
           alt="profile"
-          width={100}
+          width={300}
           height={100}
           className=""
         />
-        <div>
-          <h3 className="text-2xl font-semibold">Next</h3>
-          <p className="text-gray-500">Hellow</p>
-        </div>
+        <div></div>
       </div>
       <div className="flex flex-col gap-2 w-full">
         {menuOptions.map((menu, index) => {

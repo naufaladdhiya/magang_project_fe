@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import * as NavigationMenuRadix from "@radix-ui/react-navigation-menu";
+import Image from "next/image";
 
 const NAVIGATION_ITEMS = [
   {
@@ -19,7 +20,7 @@ const NAVIGATION_ITEMS = [
     items: [
       {
         name: "PROFILE PIMPINAN PEMKOT SURAKARTA",
-        href: "/bapenda-2",
+        href: "/profile-pimpinan",
       },
       {
         name: "PROFILE PPID",
@@ -78,28 +79,7 @@ const NAVIGATION_ITEMS = [
   },
   {
     name: "BERITA",
-    items: [
-      {
-        name: "SP Pelayanan",
-        href: "/",
-      },
-      {
-        name: "Cetak ESPPT",
-        href: "/",
-      },
-      {
-        name: "Kantor Pelayanan",
-        href: "/",
-      },
-      {
-        name: "Jenis Pajak",
-        href: "/",
-      },
-      {
-        name: "FAQ",
-        href: "/",
-      },
-    ],
+    items: [],
   },
   {
     name: "LAPORAN",
@@ -151,60 +131,64 @@ const NAVIGATION_ITEMS = [
     name: "KONTAK",
     items: [
       {
-        name: "Materi Bintek",
+        name: "Kontak Kami",
+        href: "/kontak-kami",
+      },
+      {
+        name: "Layanan Aduan",
         href: "/",
       },
       {
-        name: "Kepala Bidan",
+        name: "Formulir Keberatan",
         href: "/",
       },
     ],
   },
-  {
-    name: "COVID-19",
-    items: [
-      {
-        name: "COVID-19-JATENG",
-        href: "/",
-      },
-      {
-        name: "INFORMASI COVID-19",
-        href: "/",
-      },
-      {
-        name: "VAKSINASI COVID-19",
-        href: "/",
-      },
-      {
-        name: "BERITA",
-        href: "/",
-      },
-      {
-        name: "ANGGARAN",
-        href: "/",
-      },
-      {
-        name: "REGULASI",
-        href: "/",
-      },
-      {
-        name: "PBJ COVID-19",
-        href: "/",
-      },
-      {
-        name: "BANTUAN SOSIAL",
-        href: "/",
-      },
-      {
-        name: "GALERI GEOGRAFIS",
-        href: "/",
-      },
-      {
-        name: "GALERI VIDEO",
-        href: "/",
-      },
-    ],
-  },
+  // {
+  //   name: "COVID-19",
+  //   items: [
+  //     {
+  //       name: "COVID-19-JATENG",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "INFORMASI COVID-19",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "VAKSINASI COVID-19",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "BERITA",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "ANGGARAN",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "REGULASI",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "PBJ COVID-19",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "BANTUAN SOSIAL",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "GALERI GEOGRAFIS",
+  //       href: "/",
+  //     },
+  //     {
+  //       name: "GALERI VIDEO",
+  //       href: "/",
+  //     },
+  //   ],
+  // },
 ];
 
 const Navbar = () => {
@@ -213,13 +197,9 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full py-4">
         <div className="flex items-center">
           <a href="/">
-            <img src="/next.svg" alt="Logo" className="w-12 h-12 mr-2" />
+            <Image src={`/logo.png`} alt="logo" width={300} height={100} />
           </a>
-          <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-gray-800">
-              Bappeda Surakarta
-            </a>
-          </div>
+          <div className="flex items-center"></div>
         </div>
 
         <div className="flex items-center">
