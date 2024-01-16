@@ -40,7 +40,7 @@ export const useAuthLogin = () => {
         title: "Login berhasil",
       });
       localStorage.setItem("token", data.data.token);
-      router.push("/");
+      router.push("/dashboard");
     },
     onError: (error: any) => {
       toast({
