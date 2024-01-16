@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import LoginFeature from "@/features/Auth/Login";
 
 export const metadata: Metadata = {
-  title: "PPID Surakarta | Register",
+  title: "PPID Surakarta | Login",
 };
 
 const Login: React.FC = () => {
