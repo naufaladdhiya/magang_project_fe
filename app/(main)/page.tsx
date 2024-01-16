@@ -123,26 +123,6 @@ export default function Home() {
             <p className="mt-2 text-2xl">Daftar Informasi Publik</p>
           </div>
         </div>
-
-        {/* <iframe
-          className="w-full h-[450px]"
-          src="https://www.youtube.com/watch?v=o1TSkllUneU&t=4s&ab_channel=PPIDKotaSurakarta"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          x-frame-options="sameorigin"
-        ></iframe> */}
-
-        <div className="flex flex-col justify-center items-center mt-14">
-          <p className="text-2xl">Berita Terbaru</p>
-          <div className="flex flex-wrap justify-center gap-4 mt-4">
-            <div className="w-[300px] h-[300px] bg-slate-200 rounded-xl"></div>
-            <div className="w-[300px] h-[300px] bg-slate-200 rounded-xl"></div>
-            <div className="w-[300px] h-[300px] bg-slate-200 rounded-xl"></div>
-            <div className="w-[300px] h-[300px] bg-slate-200 rounded-xl"></div>
-          </div>
-        </div>
       </div>
     </main>
   );
