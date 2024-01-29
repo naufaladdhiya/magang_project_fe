@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axiosInstance from "@/lib/axios";
+import { useToast } from "@/components/ui/use-toast";
 
 const formVisiMisiSchema = z.object({
   title: z.string().min(3),
@@ -24,6 +25,7 @@ const formVisiMisiSchema = z.object({
 });
 
 const VisiMisiFormPage = () => {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formVisiMisiSchema>>({
     resolver: zodResolver(formVisiMisiSchema),
     defaultValues: {
@@ -46,7 +48,10 @@ const VisiMisiFormPage = () => {
     },
     onSuccess: () => {
       console.log("success");
-      alert("success");
+      toast({
+        title: "Profile PPID",
+        description: "Profile PPID berhasil ditambahkan",
+      });
     },
     onError: () => {
       throw new Error("An error occurred during add visi misi");

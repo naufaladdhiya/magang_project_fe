@@ -31,6 +31,8 @@ import { DataTable } from "@/components/tables/data-table";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ColumnDef } from "@tanstack/react-table";
 
+import { useToast } from "@/components/ui/use-toast";
+
 import axiosInstance from "@/lib/axios";
 
 type DataHukum = {
@@ -46,6 +48,7 @@ const formDasarHukumSchema = z.object({
 
 const DasarHukumFormPage = () => {
   const queryClient = useQueryClient();
+  const { toast } = useToast();
   const [openModal, setIsOpenModal] = useState(false);
 
   const form = useForm<z.infer<typeof formDasarHukumSchema>>({
@@ -74,7 +77,10 @@ const DasarHukumFormPage = () => {
     },
     onSuccess: () => {
       console.log("success");
-      alert("success");
+      toast({
+        title: "Dasar Hukum",
+        description: "Dasar Hukum berhasil ditambahkan",
+      });
       queryClient.invalidateQueries({ queryKey: ["dasar-hukum"] });
     },
     onError: () => {

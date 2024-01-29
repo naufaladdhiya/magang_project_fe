@@ -37,6 +37,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 
 interface ProfilePPIDData {
@@ -54,10 +55,12 @@ function CardProfilePPID({
   id,
   title,
   description,
+  deleteProfile,
 }: {
   id: string;
   title: string;
   description: string;
+  deleteProfile: () => void;
 }) {
   return (
     <Card className="w-full my-4" key={id}>
@@ -68,10 +71,7 @@ function CardProfilePPID({
         <p>{description}</p>
       </CardContent>
       <CardFooter className="flex justify-end gap-3">
-        <Button className="w-[300px]" variant={`green`}>
-          Edit Profile
-        </Button>
-        <Button className="w-[300px]" variant={`red`}>
+        <Button className="w-[300px]" variant={`red`} onClick={deleteProfile}>
           Hapus Profile
         </Button>
       </CardFooter>
@@ -82,6 +82,7 @@ function CardProfilePPID({
 const ProfilePPIDFormPage = () => {
   const [openModal, setIsOpenModal] = useState(false);
   const queryClient = useQueryClient();
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formProfileSchema>>({
     resolver: zodResolver(formProfileSchema),
@@ -114,11 +115,34 @@ const ProfilePPIDFormPage = () => {
     },
     onSuccess: () => {
       console.log("success");
-      alert("success");
+      toast({
+        title: "Profile PPID",
+        description: "Profile PPID berhasil ditambahkan",
+      });
       queryClient.invalidateQueries({ queryKey: ["profile-ppid"] });
     },
     onError: () => {
       throw new Error("An error occurred during add profile ppid");
+    },
+  });
+
+  const { mutate: deleteProfilePPID } = useMutation({
+    mutationKey: ["delete-profile-ppid"],
+    mutationFn: async (id: string) => {
+      const response = await axiosInstance.delete(`profile/ppid/${id}`);
+
+      return response.data;
+    },
+    onSuccess: () => {
+      console.log("success");
+      toast({
+        title: "Profile PPID",
+        description: "Profile PPID berhasil dihapus",
+      });
+      queryClient.invalidateQueries({ queryKey: ["profile-ppid"] });
+    },
+    onError: () => {
+      throw new Error("An error occurred during delete profile ppid");
     },
   });
 
@@ -131,6 +155,7 @@ const ProfilePPIDFormPage = () => {
             id={profile.id}
             title={profile.title}
             description={profile.description}
+            deleteProfile={() => deleteProfilePPID(profile.id)}
           />
         ))}
 

@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { useToast } from "@/components/ui/use-toast";
 import axiosInstance from "@/lib/axios";
 
 const formLinkPPIDSchema = z.object({
@@ -24,6 +25,7 @@ const formLinkPPIDSchema = z.object({
 });
 
 const LinkPPIDFormPage = () => {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formLinkPPIDSchema>>({
     resolver: zodResolver(formLinkPPIDSchema),
     defaultValues: {
@@ -49,7 +51,10 @@ const LinkPPIDFormPage = () => {
     },
     onSuccess: () => {
       console.log("success");
-      alert("success");
+      toast({
+        title: "Link PPID",
+        description: "Link PPID berhasil ditambahkan",
+      });
     },
     onError: () => {
       throw new Error("An error occurred during add profile ppid");
